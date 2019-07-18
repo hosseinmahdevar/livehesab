@@ -16,6 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @RequiredArgsConstructor
 public class Role extends BaseEntity<UUID> {
+
     private String name;
     @NonNull
     private String code;

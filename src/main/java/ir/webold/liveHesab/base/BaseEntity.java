@@ -1,5 +1,8 @@
 package ir.webold.liveHesab.base;
 
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -14,14 +17,14 @@ public class BaseEntity <ID extends Serializable> implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
     private ID id;
-    private Boolean deleted;
-    {
-        deleted=false;
-    }
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Column(name = "create_date")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "USER_IP",length = 15)
+    private String userip;
+
+    @CreatedDate
+    @UpdateTimestamp
+    @Column(name = "CREATED_DATE")
     private Date createDate;
     {
         createDate = new Date();
@@ -35,19 +38,19 @@ public class BaseEntity <ID extends Serializable> implements Serializable {
         this.id = id;
     }
 
+    public String getUserip() {
+        return userip;
+    }
+
+    public void setUserip(String userip) {
+        this.userip = userip;
+    }
+
     public Date getCreateDate() {
         return createDate;
     }
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
-    }
-
-    public Boolean getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Boolean deleted) {
-        this.deleted = deleted;
     }
 }
