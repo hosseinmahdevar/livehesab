@@ -5,7 +5,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import javax.xml.ws.soap.Addressing;
+
 import java.util.List;
 
 public abstract class BaseService<T extends BaseEntity,ID>{
