@@ -14,6 +14,8 @@ public class User extends BaseEntity<UUID> {
     private String username;
     @Column(name = "PASSWORD")
     private String password;
+    @Column(name = "ISACTIVE")
+    private boolean isActive;
 
 
     public String getUsername() {
@@ -32,4 +34,11 @@ public class User extends BaseEntity<UUID> {
         this.password = password;
     }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 }
