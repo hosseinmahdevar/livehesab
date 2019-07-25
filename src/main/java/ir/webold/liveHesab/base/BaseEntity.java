@@ -19,16 +19,13 @@ public class BaseEntity <ID extends Serializable> implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private ID id;
-    @Column(name = "USER_IP",length = 15)
-    private String userip;
+    @Column(name = "CREATED_IP",length = 15)
+    private String createdIp;
 
     @CreatedDate
     @UpdateTimestamp
     @Column(name = "CREATED_DATE")
     private Date createDate;
-    {
-        createDate = new Date();
-    }
 
     public ID getId() {
         return id;
@@ -38,12 +35,12 @@ public class BaseEntity <ID extends Serializable> implements Serializable {
         this.id = id;
     }
 
-    public String getUserip() {
-        return userip;
+    public String getCreatedIp() {
+        return createdIp;
     }
 
-    public void setUserip(String userip) {
-        this.userip = userip;
+    public void setCreatedIp(String createdIp) {
+        this.createdIp = createdIp;
     }
 
     public Date getCreateDate() {
