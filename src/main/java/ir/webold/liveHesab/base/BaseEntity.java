@@ -22,6 +22,7 @@ public class BaseEntity <ID extends Serializable> implements Serializable {
     @Column(name = "CREATED_IP",length = 15)
     private String createdIp;
 
+
     @CreatedDate
     @UpdateTimestamp
     @Column(name = "CREATED_DATE")
