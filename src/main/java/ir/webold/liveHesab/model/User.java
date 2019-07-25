@@ -31,4 +31,5 @@ public class User extends BaseEntity<UUID> {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
